@@ -230,30 +230,37 @@ body {
 }
 
 #intro{
-    display:none;
+    position: fixed;
+    inset: 0;
 
-    position:fixed;
-    inset:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background:black;
+    background: black;
+    color: white;
 
-    color:white;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:101;
-}
-
-#intro p{
-    font-size: 20rem;
-}
-
-#intro p{
     opacity: 0;
-    transition: opacity 1s;
+    visibility: hidden;
+
+    transition: opacity 2s;
+
+    z-index: 200;
+}
+
+#intro.ativo{
+    opacity: 1;
+    visibility: visible;
+}
+
+#intro p{
+    font-size:20rem;
+
+    opacity:0;
+
+    transition:opacity 1s;
 }
 
 #intro p.mostrar{
-    opacity: 1;
+    opacity:1;
 }
