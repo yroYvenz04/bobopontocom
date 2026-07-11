@@ -1,4 +1,259 @@
-*{
-    font-size: 16px;
-    background-color: plum;
+* {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background-color: rgb(146, 86, 146);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    cursor: url("../img/cursornormal.png"), auto;
+}
+
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
+        url("../img/overplaygame.jpeg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+#fireflies {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.firefly {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: rgba(205, 255, 140, 0.8);
+
+    box-shadow:
+        0 0 6px rgba(180, 255, 140, .9),
+        0 0 15px rgba(180, 255, 140, .7),
+        0 0 30px rgba(180, 255, 140, .4);
+
+    animation: firefly 6s ease-in-out infinite;
+}
+
+.firefly:nth-child(1) {
+    top: 18%;
+    left: 14%;
+    animation-duration: 7s;
+}
+
+.firefly:nth-child(2) {
+    top: 30%;
+    left: 72%;
+    animation-duration: 5s;
+    animation-delay: 1.2s;
+}
+
+.firefly:nth-child(3) {
+    top: 65%;
+    left: 18%;
+    animation-duration: 8s;
+}
+
+.firefly:nth-child(4) {
+    top: 80%;
+    left: 58%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.firefly:nth-child(5) {
+    top: 48%;
+    left: 88%;
+    animation-duration: 9s;
+}
+
+.firefly:nth-child(6) {
+    top: 72%;
+    left: 82%;
+    animation-duration: 5.5s;
+}
+
+.firefly:nth-child(7) {
+    top: 38%;
+    left: 40%;
+    animation-duration: 7.5s;
+}
+
+@keyframes firefly {
+
+    0% {
+        opacity: .1;
+        transform: translateY(0px) translateX(0px) scale(.8);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(-8px) translateX(4px) scale(1);
+    }
+
+    50% {
+        opacity: .4;
+        transform: translateY(-15px) translateX(-3px) scale(.9);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateY(-10px) translateX(5px) scale(1.1);
+    }
+
+    100% {
+        opacity: .1;
+        transform: translateY(0px) translateX(0px) scale(.8);
+    }
+
+}
+
+#fade{
+    position: fixed;
+    inset: 0;
+
+    background: black;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 2s;
+
+    z-index: 100;
+}
+
+.fade{
+    opacity: 1;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.5rem;
+}
+
+
+#menu h1 {
+    font-size: 20rem;
+    color: rgb(27, 100, 77);
+    font-family: "Hallowin";
+
+    text-shadow:
+        -2px -2px 0 black,
+        2px -2px 0 black,
+        -2px 2px 0 black,
+        2px 2px 0 black,
+        8px 8px 20px rgba(0, 0, 0, .5);
+}
+
+@font-face {
+    font-family: "Hallowin";
+    src: url("../fonts/Hallowin.ttf") format("truetype");
+}
+
+#menu h1 {
+    animation: brilho 2.3s infinite alternate;
+}
+
+@keyframes brilho {
+
+    from {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #b46cff;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #fff,
+            0 0 40px #b46cff,
+            0 0 70px #b46cff;
+    }
+
+}
+
+#menu button {
+    font-size: 5.5rem;
+    font-family: "Longa";
+    text-align: center;
+    padding-top: 1.4rem;
+    color: rgb(218, 212, 212);
+    background-color: rgb(93, 48, 145);
+    border-radius: 1.5rem;
+    border-style: none;
+
+    border: 0.2rem solid #fff;
+}
+
+@font-face {
+    font-family: "Longa";
+    src: url("../fonts/LongaIberica-DEMO.ttf") format("truetype");
+}
+
+#start {
+    padding: 0.4rem 11rem;
+    box-shadow: 0 0 15px rgb(144, 59, 241);
+}
+
+#start:hover {
+    background-color: rgb(70, 18, 129);
+    cursor: url("../img/cursorpoint.png"), pointer;
+}
+
+#start:hover {
+    transform: scale(1.05);
+
+    box-shadow: 0 0 23px rgb(170, 100, 255);
+
+    transition: .2s;
+}
+
+#start:active {
+
+    transform: scale(.97);
+
+}
+
+#intro{
+    display:none;
+
+    position:fixed;
+    inset:0;
+
+    background:black;
+
+    color:white;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:101;
+}
+
+#intro p{
+    font-size: 20rem;
+}
+
+#intro p{
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#intro p.mostrar{
+    opacity: 1;
 }
